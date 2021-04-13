@@ -16,7 +16,11 @@ import java.util.List;
  * todo: 2. Enable transaction management on class level
  * todo: 3. Inject {@link EntityManager} using @{@link PersistenceContext} annotation
  */
+
+@Repository("userDao")
+@Transactional
 public class JpaUserDao implements UserDao {
+    @PersistenceContext
     private EntityManager entityManager;
 
     @Override
